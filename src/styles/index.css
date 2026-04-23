@@ -101,22 +101,10 @@ code {
 
 .site-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   gap: 1.5rem;
   padding-top: 1.35rem;
-}
-
-.brand {
-  display: inline-flex;
-  align-items: center;
-  text-decoration: none;
-}
-
-.brand-logo {
-  width: 172px;
-  max-width: 42vw;
-  height: auto;
 }
 
 .site-nav {
@@ -206,7 +194,6 @@ code {
 }
 
 .hero h1,
-.section-heading h2,
 .markdown-panel h1,
 .markdown-panel h2,
 .markdown-panel h3 {
@@ -299,14 +286,6 @@ code {
   padding: 1.85rem 1.8rem;
   margin-bottom: 1.5rem;
   animation: rise-in 700ms ease-out both;
-}
-
-.section-heading {
-  margin-bottom: 1.25rem;
-}
-
-.section-heading h2 {
-  font-size: clamp(1.75rem, 3vw, 2.45rem);
 }
 
 .markdown-panel h1 {

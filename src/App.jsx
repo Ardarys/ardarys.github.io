@@ -11,35 +11,25 @@ const markdownFiles = {
 }
 
 const brandAssets = {
-  logo: `${baseUrl}brand/logo.png`,
   hero: `${baseUrl}images/hero.png`,
 }
 
 const sections = [
   {
     key: 'description',
-    eyebrow: 'Description',
-    title: 'Project overview',
     fallback:
       'No description content is available yet. Add copy to adl-ara-description.md to populate this section automatically.',
   },
   {
     key: 'content',
-    eyebrow: 'Content',
-    title: 'Landing page content',
     fallback:
       'No landing page content is available yet. Add copy to landing-page-content.md to populate this section automatically.',
   },
 ]
 
-function MarkdownSection({ id, eyebrow, title, body, error, loading }) {
+function MarkdownSection({ id, body, error, loading }) {
   return (
     <section className="panel markdown-panel" id={id}>
-      <div className="section-heading">
-        <p className="eyebrow">{eyebrow}</p>
-        <h2>{title}</h2>
-      </div>
-
       {loading ? (
         <p className="status">Loading markdown content...</p>
       ) : (
@@ -106,10 +96,6 @@ export default function App() {
 
       <main className="container">
         <header className="site-header">
-          <a className="brand" href="#root" aria-label="Ardaris home">
-            <img src={brandAssets.logo} alt="Ardaris logo" className="brand-logo" />
-          </a>
-
           <nav className="site-nav" aria-label="Primary">
             <a href="#description-section">About</a>
             <a href="#content-section">Platform</a>
@@ -119,16 +105,14 @@ export default function App() {
         <section
           className="hero hero-background"
           style={{
-            backgroundImage: `linear-gradient(180deg, rgba(8, 10, 38, 0.3), rgba(8, 10, 38, 0.82)), url(${brandAssets.hero})`,
+            backgroundImage: `linear-gradient(180deg, rgba(8, 10, 38, 0.000001), rgba(8, 10, 38, 0.82)), url(${brandAssets.hero})`,
           }}
         >
           <div className="hero-copy">
             <p className="eyebrow">AI-Powered Legal Decision Intelligence</p>
             <h1>Ardaris</h1>
             <p className="hero-text">
-              Ardaris helps people and businesses navigate legal questions with
-              more speed, clarity, and confidence through structured workflows,
-              AI-assisted research, and input from multiple verified experts.
+              Better legal decisions, with AI support and real expert input.
             </p>
 
             <div className="hero-actions">
@@ -166,8 +150,6 @@ export default function App() {
             <MarkdownSection
               key={section.key}
               id={`${section.key}-section`}
-              eyebrow={section.eyebrow}
-              title={section.title}
               body={body}
               error={data.error}
               loading={data.loading}
