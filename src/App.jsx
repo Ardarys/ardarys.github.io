@@ -106,8 +106,8 @@ export default function App() {
 
       <main className="container">
         <header className="site-header">
-          <a className="brand" href="#root" aria-label="AdlAra home">
-            <img src={brandAssets.logo} alt="AdlAra logo" className="brand-logo" />
+          <a className="brand" href="#root" aria-label="Ardaris home">
+            <img src={brandAssets.logo} alt="Ardaris logo" className="brand-logo" />
           </a>
 
           <nav className="site-nav" aria-label="Primary">
@@ -116,12 +116,17 @@ export default function App() {
           </nav>
         </header>
 
-        <section className="hero panel">
+        <section
+          className="hero hero-background"
+          style={{
+            backgroundImage: `linear-gradient(180deg, rgba(8, 10, 38, 0.3), rgba(8, 10, 38, 0.82)), url(${brandAssets.hero})`,
+          }}
+        >
           <div className="hero-copy">
             <p className="eyebrow">AI-Powered Legal Decision Intelligence</p>
-            <h1>Better legal decisions, powered by AI and expert validation.</h1>
+            <h1>Ardaris</h1>
             <p className="hero-text">
-              AdlAra helps people and businesses navigate legal questions with
+              Ardaris helps people and businesses navigate legal questions with
               more speed, clarity, and confidence through structured workflows,
               AI-assisted research, and input from multiple verified experts.
             </p>
@@ -151,13 +156,6 @@ export default function App() {
             </div>
           </div>
 
-          <div className="hero-visual">
-            <img
-              src={brandAssets.hero}
-              alt="AdlAra platform hero visual"
-              className="hero-image"
-            />
-          </div>
         </section>
 
         {sections.map((section) => {
@@ -180,7 +178,7 @@ export default function App() {
 
       <footer className="site-footer">
         <div className="container footer-inner">
-          <p>AdlAra brings decision intelligence to modern legal services.</p>
+          <p>Ardaris brings decision intelligence to modern legal services.</p>
           <a href="#root">Back to top</a>
         </div>
       </footer>
