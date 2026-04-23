@@ -53,6 +53,34 @@ function splitContentIntoPanels(markdown) {
   return [intro, core, closing].filter(Boolean)
 }
 
+function extractStrategicCards(markdown) {
+  const headings = [
+    '## Already delivering value',
+    '## Built for scale',
+    '## Competitive edge',
+    '## A platform that improves over time',
+  ]
+
+  const valueStart = markdown.indexOf(headings[0])
+  const scaleStart = markdown.indexOf(headings[1])
+  const edgeStart = markdown.indexOf(headings[2])
+  const afterCardsStart = markdown.indexOf(headings[3])
+
+  if ([valueStart, scaleStart, edgeStart, afterCardsStart].some((index) => index === -1)) {
+    return null
+  }
+
+  return {
+    before: markdown.slice(0, valueStart).trim(),
+    cards: [
+      markdown.slice(valueStart, scaleStart).trim(),
+      markdown.slice(scaleStart, edgeStart).trim(),
+      markdown.slice(edgeStart, afterCardsStart).trim(),
+    ],
+    after: markdown.slice(afterCardsStart).trim(),
+  }
+}
+
 function MarkdownSection({ id, body, error, loading }) {
   return (
     <section className="panel markdown-panel" id={id}>
@@ -60,6 +88,26 @@ function MarkdownSection({ id, body, error, loading }) {
         <p className="status">Loading markdown content...</p>
       ) : (
         <ReactMarkdown remarkPlugins={[remarkGfm]}>{error || body}</ReactMarkdown>
+      )}
+    </section>
+  )
+}
+
+function MarkdownCardGrid({ id, cards, loading, error }) {
+  return (
+    <section className="cards-section" id={id}>
+      {loading ? (
+        <section className="panel markdown-panel">
+          <p className="status">Loading markdown content...</p>
+        </section>
+      ) : (
+        <div className="cards-grid">
+          {cards.map((card, index) => (
+            <article className="panel markdown-panel content-card" key={index}>
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>{error || card}</ReactMarkdown>
+            </article>
+          ))}
+        </div>
       )}
     </section>
   )
@@ -173,6 +221,34 @@ export default function App() {
           const body = data.content || section.fallback
 
           if (section.key === 'content') {
+            const split = extractStrategicCards(body)
+
+            if (split) {
+              return [
+                <MarkdownSection
+                  key={`${section.key}-intro`}
+                  id="content-section"
+                  body={split.before}
+                  error={data.error}
+                  loading={data.loading}
+                />,
+                <MarkdownCardGrid
+                  key={`${section.key}-cards`}
+                  id="content-highlights"
+                  cards={split.cards}
+                  error={data.error}
+                  loading={data.loading}
+                />,
+                <MarkdownSection
+                  key={`${section.key}-closing`}
+                  id={`${section.key}-section-3`}
+                  body={split.after}
+                  error={data.error}
+                  loading={data.loading}
+                />,
+              ]
+            }
+
             const panels = splitContentIntoPanels(body)
 
             return panels.map((panel, index) => (

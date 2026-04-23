@@ -288,6 +288,26 @@ code {
   animation: rise-in 700ms ease-out both;
 }
 
+.cards-section {
+  margin-bottom: 1.5rem;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.content-card {
+  height: 100%;
+  margin-bottom: 0;
+}
+
+.content-card .markdown-panel,
+.content-card.markdown-panel {
+  min-height: 100%;
+}
+
 .markdown-panel h1 {
   font-size: clamp(2rem, 4vw, 3rem);
   margin-bottom: 1rem;
@@ -394,6 +414,10 @@ code {
   }
 
   .hero-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .cards-grid {
     grid-template-columns: 1fr;
   }
 }
