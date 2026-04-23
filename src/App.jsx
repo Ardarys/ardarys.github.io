@@ -27,6 +27,32 @@ const sections = [
   },
 ]
 
+function splitContentIntoPanels(markdown) {
+  if (!markdown) {
+    return []
+  }
+
+  const parts = markdown.split('\n## ')
+
+  if (parts.length <= 2) {
+    return [markdown]
+  }
+
+  const intro = [parts[0], `## ${parts[1]}`].join('\n\n').trim()
+  const core = parts
+    .slice(2, 6)
+    .map((part) => `## ${part}`)
+    .join('\n\n')
+    .trim()
+  const closing = parts
+    .slice(6)
+    .map((part) => `## ${part}`)
+    .join('\n\n')
+    .trim()
+
+  return [intro, core, closing].filter(Boolean)
+}
+
 function MarkdownSection({ id, body, error, loading }) {
   return (
     <section className="panel markdown-panel" id={id}>
@@ -145,6 +171,20 @@ export default function App() {
         {sections.map((section) => {
           const data = state[section.key]
           const body = data.content || section.fallback
+
+          if (section.key === 'content') {
+            const panels = splitContentIntoPanels(body)
+
+            return panels.map((panel, index) => (
+              <MarkdownSection
+                key={`${section.key}-${index}`}
+                id={index === 0 ? 'content-section' : `${section.key}-section-${index + 1}`}
+                body={panel}
+                error={data.error}
+                loading={data.loading}
+              />
+            ))
+          }
 
           return (
             <MarkdownSection
