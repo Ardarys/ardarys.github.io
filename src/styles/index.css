@@ -200,6 +200,7 @@ code {
   margin: 0;
   font-family: 'Space Grotesk', sans-serif;
   letter-spacing: -0.04em;
+  color: var(--warm-bold);
 }
 
 .hero h1 {
@@ -324,6 +325,10 @@ code {
   margin-top: 1.4rem;
   margin-bottom: 0.35rem;
   color: var(--warm-soft);
+}
+
+#description-section h1 {
+  color: var(--text-main);
 }
 
 .markdown-panel p,
