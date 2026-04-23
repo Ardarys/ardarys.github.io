@@ -10,6 +10,11 @@ const markdownFiles = {
   content: `${baseUrl}landing-page-content.md`,
 }
 
+const brandAssets = {
+  logo: `${baseUrl}brand/logo.png`,
+  hero: `${baseUrl}images/hero.png`,
+}
+
 const sections = [
   {
     key: 'description',
@@ -27,9 +32,9 @@ const sections = [
   },
 ]
 
-function MarkdownSection({ eyebrow, title, body, error, loading }) {
+function MarkdownSection({ id, eyebrow, title, body, error, loading }) {
   return (
-    <section className="panel markdown-panel">
+    <section className="panel markdown-panel" id={id}>
       <div className="section-heading">
         <p className="eyebrow">{eyebrow}</p>
         <h2>{title}</h2>
@@ -100,30 +105,58 @@ export default function App() {
       <div className="background-orb background-orb-two" />
 
       <main className="container">
+        <header className="site-header">
+          <a className="brand" href="#root" aria-label="AdlAra home">
+            <img src={brandAssets.logo} alt="AdlAra logo" className="brand-logo" />
+          </a>
+
+          <nav className="site-nav" aria-label="Primary">
+            <a href="#description-section">About</a>
+            <a href="#content-section">Platform</a>
+          </nav>
+        </header>
+
         <section className="hero panel">
           <div className="hero-copy">
-            <p className="eyebrow">Markdown-driven landing page</p>
-            <h1>Ship a GitHub Pages landing page without touching the GitHub UI.</h1>
+            <p className="eyebrow">AI-Powered Legal Decision Intelligence</p>
+            <h1>Better legal decisions, powered by AI and expert validation.</h1>
             <p className="hero-text">
-              This Vite app reads repository-managed markdown, renders it with a
-              lightweight React stack, and deploys automatically through GitHub
-              Actions with a GitHub Pages-safe base path.
+              AdlAra helps people and businesses navigate legal questions with
+              more speed, clarity, and confidence through structured workflows,
+              AI-assisted research, and input from multiple verified experts.
             </p>
+
+            <div className="hero-actions">
+              <a className="button button-primary" href="#content-section">
+                Explore the platform
+              </a>
+              <a className="button button-secondary" href="#description-section">
+                Learn how it works
+              </a>
+            </div>
           </div>
 
           <div className="hero-meta">
             <div>
-              <span className="meta-label">Rendering</span>
-              <strong>React Markdown + GFM</strong>
+              <span className="meta-label">Expert validation</span>
+              <strong>Multiple verified legal perspectives</strong>
             </div>
             <div>
-              <span className="meta-label">Deployment</span>
-              <strong>GitHub Actions to Pages</strong>
+              <span className="meta-label">Decision quality</span>
+              <strong>Performance-based scoring and accountability</strong>
             </div>
             <div>
-              <span className="meta-label">Runtime source</span>
-              <strong>`landing-page-content.md`</strong>
+              <span className="meta-label">Outcome</span>
+              <strong>Faster, clearer, more reliable legal workflows</strong>
             </div>
+          </div>
+
+          <div className="hero-visual">
+            <img
+              src={brandAssets.hero}
+              alt="AdlAra platform hero visual"
+              className="hero-image"
+            />
           </div>
         </section>
 
@@ -134,6 +167,7 @@ export default function App() {
           return (
             <MarkdownSection
               key={section.key}
+              id={`${section.key}-section`}
               eyebrow={section.eyebrow}
               title={section.title}
               body={body}
@@ -146,7 +180,7 @@ export default function App() {
 
       <footer className="site-footer">
         <div className="container footer-inner">
-          <p>Built with React, Vite, and markdown sourced from this repository.</p>
+          <p>AdlAra brings decision intelligence to modern legal services.</p>
           <a href="#root">Back to top</a>
         </div>
       </footer>
