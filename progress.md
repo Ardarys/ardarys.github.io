@@ -6,5 +6,4 @@
 - [x] Build landing page layout and responsive dark theme
 - [x] Add GitHub Pages deployment workflow
 - [x] Add README with setup and deployment notes
-- [ ] Populate repository markdown content
-
+- [x] Populate repository markdown content
