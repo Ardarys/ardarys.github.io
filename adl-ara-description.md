@@ -1,17 +1,17 @@
-# Legal decision intelligence for work that cannot wait
+# Better legal decisions, with structure behind every answer
 
-Ardaris helps legal teams compare options, pressure-test strategy, and move from uncertainty to a clearer next step. It combines AI-supported analysis with structured expert input so decisions are easier to explain, review, and improve.
+AdlAra is an AI-powered legal decision platform for people and businesses that need clearer legal guidance without the usual uncertainty, delay, or single-opinion risk.
 
-The platform is designed for moments where speed and judgment both matter: early case assessment, settlement strategy, litigation risk, regulatory questions, and internal decision reviews.
+Instead of treating legal advice as a one-off conversation, AdlAra turns each matter into a structured workflow. Users can explain their issue, receive AI-assisted analysis, and compare input from multiple verified legal experts before deciding what to do next.
 
-## How Ardaris Works
+## Built for Confidence
 
-Ardaris turns complex legal questions into a decision workflow. Teams can frame a problem, collect relevant context, surface competing interpretations, and compare the likely strengths, weaknesses, and consequences of different paths.
+Traditional legal services can be slow, expensive, and difficult to evaluate. A user often depends on one lawyer, with little visibility into whether the advice is complete, consistent, or aligned with likely outcomes.
 
-Rather than replacing professional judgment, Ardaris gives that judgment a stronger operating system. Expert perspectives, AI-generated analysis, and outcome feedback can all be organized in one place, making decisions more transparent and repeatable.
+AdlAra adds transparency to that process. Cases move through clear steps, expert contributions can be compared, and lawyer performance can be scored over time based on quality and outcomes.
 
-## Why It Matters
+## More Than Access to Lawyers
 
-Legal work often depends on high-stakes calls made with incomplete information. Ardaris helps teams reduce blind spots, document reasoning, and learn from outcomes over time.
+The goal is not only to help users find legal help. The goal is to improve the quality of the decision itself.
 
-The result is a more disciplined way to make legal decisions: faster to start, easier to challenge, and stronger after review.
+By combining structured case management, AI-assisted research, multi-lawyer input, and performance-based ranking, AdlAra creates a decision intelligence layer for modern legal services.

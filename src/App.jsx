@@ -184,17 +184,17 @@ export default function App() {
         >
           <div className="hero-copy">
             <p className="eyebrow">AI-Powered Legal Decision Intelligence</p>
-            <h1>Ardaris</h1>
+            <h1>AdlAra</h1>
             <p className="hero-text">
               Better legal decisions, with AI support and real expert input.
             </p>
 
             <div className="hero-actions">
               <a className="button button-primary" href="#content-section">
-                Explore the platform
+                Get legal help
               </a>
               <a className="button button-secondary" href="#description-section">
-                Learn how it works
+                Join as a lawyer
               </a>
             </div>
           </div>
@@ -276,7 +276,7 @@ export default function App() {
 
       <footer className="site-footer">
         <div className="container footer-inner">
-          <p>Ardaris brings decision intelligence to modern legal services.</p>
+          <p>AdlAra brings decision intelligence to modern legal services.</p>
           <a href="#root">Back to top</a>
         </div>
       </footer>
