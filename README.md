@@ -41,11 +41,13 @@ The GitHub Actions workflow lives at `.github/workflows/deploy.yml` and deploys 
 
 Go to repository Settings -> Pages. Under `Source`, select `GitHub Actions`.
 
+Do not set Pages to deploy directly from the repository root. The root `index.html` is the Vite source entry and intentionally points at `/src/main.jsx` for local development. GitHub Pages must serve the compiled files uploaded from `dist/` by the workflow.
+
 ## Base path behavior
 
 `vite.config.js` automatically uses:
 
-- `/` for local development
-- `/<repo-name>/` in GitHub Actions when `GITHUB_REPOSITORY` is available
+- `/` for local development and `*.github.io` user/organization Pages sites
+- `/<repo-name>/` for GitHub Pages project sites
 
 That keeps asset and markdown fetch paths compatible with GitHub Pages project sites.

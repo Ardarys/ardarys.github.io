@@ -1,4 +1,4 @@
-import { copyFile, mkdir } from 'node:fs/promises'
+import { access, copyFile, mkdir } from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -9,11 +9,25 @@ const markdownFiles = ['adl-ara-description.md', 'landing-page-content.md']
 
 await mkdir(publicDir, { recursive: true })
 
+const copiedFiles = []
+const missingFiles = []
+
 await Promise.all(
-  markdownFiles.map((file) =>
-    copyFile(path.join(rootDir, file), path.join(publicDir, file)),
-  ),
+  markdownFiles.map(async (file) => {
+    const source = path.join(rootDir, file)
+
+    try {
+      await access(source)
+      await copyFile(source, path.join(publicDir, file))
+      copiedFiles.push(file)
+    } catch {
+      missingFiles.push(file)
+    }
+  }),
 )
 
-console.log(`Synced ${markdownFiles.length} markdown files into public/.`)
+if (missingFiles.length > 0) {
+  console.warn(`Skipped missing markdown files: ${missingFiles.join(', ')}`)
+}
 
+console.log(`Synced ${copiedFiles.length} markdown file(s) into public/.`)
