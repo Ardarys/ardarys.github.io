@@ -1,17 +1,7 @@
-# Better legal decisions, with structure behind every answer
+# About Ardarys
 
-AdlAra is an AI-powered legal decision platform for people and businesses that need clearer legal guidance without the usual uncertainty, delay, or single-opinion risk.
+Ardarys builds practical AI products for decision-heavy professional services. Its first platform, AdlAra, focuses on legal decisions: helping people and businesses get clearer guidance, compare expert input, and move forward with more confidence.
 
-Instead of treating legal advice as a one-off conversation, AdlAra turns each matter into a structured workflow. Users can explain their issue, receive AI-assisted analysis, and compare input from multiple verified legal experts before deciding what to do next.
+AdlAra combines structured case workflows, AI-assisted research, and multiple verified lawyer perspectives in one place. Instead of relying on a single opinion or scattered information, users can see the reasoning behind a recommendation and understand their options more clearly.
 
-## Built for Confidence
-
-Traditional legal services can be slow, expensive, and difficult to evaluate. A user often depends on one lawyer, with little visibility into whether the advice is complete, consistent, or aligned with likely outcomes.
-
-AdlAra adds transparency to that process. Cases move through clear steps, expert contributions can be compared, and lawyer performance can be scored over time based on quality and outcomes.
-
-## More Than Access to Lawyers
-
-The goal is not only to help users find legal help. The goal is to improve the quality of the decision itself.
-
-By combining structured case management, AI-assisted research, multi-lawyer input, and performance-based ranking, AdlAra creates a decision intelligence layer for modern legal services.
+The platform is designed to make legal support faster, more transparent, and easier to evaluate while keeping expert judgment at the center of the process.
