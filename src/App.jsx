@@ -220,10 +220,10 @@ export default function App() {
 
             <div className="hero-actions">
               <a className="button button-primary" href="#content-section">
-                Get legal help
+                Explore the platform
               </a>
-              <a className="button button-secondary" href="#description-section">
-                Join as a lawyer
+              <a className="button button-secondary" href="#pitch-deck">
+                View pitch deck
               </a>
             </div>
           </div>
@@ -244,8 +244,6 @@ export default function App() {
           </div>
 
         </section>
-
-        <PitchDeckDownload />
 
         {sections.map((section) => {
           const data = state[section.key]
@@ -303,6 +301,8 @@ export default function App() {
             />
           )
         })}
+
+        <PitchDeckDownload />
       </main>
 
       <footer className="site-footer">
