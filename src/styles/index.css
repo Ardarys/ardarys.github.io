@@ -283,6 +283,57 @@ code {
   line-height: 1.45;
 }
 
+.deck-download {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.15rem 1.2rem 1.15rem 1.35rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(242, 208, 169, 0.22);
+  border-radius: 24px;
+  background:
+    linear-gradient(135deg, rgba(242, 208, 169, 0.13), rgba(206, 95, 212, 0.1)),
+    rgba(8, 12, 42, 0.7);
+  box-shadow: 0 22px 60px rgba(4, 7, 35, 0.24);
+  backdrop-filter: blur(14px);
+  animation: rise-in 680ms ease-out both;
+}
+
+.deck-download-copy {
+  min-width: 0;
+}
+
+.deck-kicker {
+  margin: 0 0 0.3rem;
+  color: var(--warm-soft);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.deck-download h2 {
+  margin: 0;
+  color: var(--text-main);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+  letter-spacing: 0;
+  line-height: 1.15;
+}
+
+.deck-download p:not(.deck-kicker) {
+  max-width: 62ch;
+  margin: 0.45rem 0 0;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+.deck-download-button {
+  flex: 0 0 auto;
+  min-width: 156px;
+}
+
 .markdown-panel {
   padding: 1.85rem 1.8rem;
   margin-bottom: 1.5rem;
@@ -425,6 +476,11 @@ code {
   .cards-grid {
     grid-template-columns: 1fr;
   }
+
+  .deck-download {
+    align-items: flex-start;
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 720px) {
@@ -440,7 +496,8 @@ code {
   }
 
   .hero,
-  .markdown-panel {
+  .markdown-panel,
+  .deck-download {
     padding: 1.25rem;
     border-radius: 24px;
   }
@@ -448,5 +505,9 @@ code {
   .hero h1 {
     max-width: none;
     font-size: clamp(3rem, 14vw, 4.8rem);
+  }
+
+  .deck-download-button {
+    width: 100%;
   }
 }

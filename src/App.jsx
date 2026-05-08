@@ -14,6 +14,11 @@ const brandAssets = {
   hero: `${baseUrl}images/hero.png`,
 }
 
+const pitchDeck = {
+  url: `${baseUrl}pitch_deck/${encodeURIComponent('Ardarys - Pitch Deck.pdf')}`,
+  filename: 'Ardarys - Pitch Deck.pdf',
+}
+
 const sections = [
   {
     key: 'description',
@@ -113,6 +118,29 @@ function MarkdownCardGrid({ id, cards, loading, error }) {
   )
 }
 
+function PitchDeckDownload() {
+  return (
+    <section className="deck-download" id="pitch-deck" aria-labelledby="pitch-deck-title">
+      <div className="deck-download-copy">
+        <p className="deck-kicker">Investor materials</p>
+        <h2 id="pitch-deck-title">Download the Ardarys pitch deck</h2>
+        <p>
+          Get a concise overview of the platform, market, product strategy, and investment
+          narrative.
+        </p>
+      </div>
+
+      <a
+        className="button button-primary deck-download-button"
+        href={pitchDeck.url}
+        download={pitchDeck.filename}
+      >
+        Download PDF
+      </a>
+    </section>
+  )
+}
+
 export default function App() {
   const [state, setState] = useState({
     description: { content: '', loading: true, error: '' },
@@ -173,6 +201,7 @@ export default function App() {
           <nav className="site-nav" aria-label="Primary">
             <a href="#description-section">About</a>
             <a href="#content-section">Platform</a>
+            <a href="#pitch-deck">Pitch deck</a>
           </nav>
         </header>
 
@@ -215,6 +244,8 @@ export default function App() {
           </div>
 
         </section>
+
+        <PitchDeckDownload />
 
         {sections.map((section) => {
           const data = state[section.key]
