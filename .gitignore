@@ -1,1 +1,6 @@
 appmap.log
+node_modules/
+dist/
+public/Ardarys-description.md
+public/landing-page-content.md
+public/pitch_deck/

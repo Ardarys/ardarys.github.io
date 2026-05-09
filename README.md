@@ -14,7 +14,7 @@ This repository contains a production-ready React + Vite landing page that rende
 
 Update these files in the repository root:
 
-- `adl-ara-description.md`
+- `Ardarys-description.md`
 - `landing-page-content.md`
 
 Before `dev` and `build`, a sync script copies those files into `public/` so they can be fetched at runtime.

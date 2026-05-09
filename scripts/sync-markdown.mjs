@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url'
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const rootDir = path.resolve(__dirname, '..')
 const publicDir = path.join(rootDir, 'public')
-const markdownFiles = ['adl-ara-description.md', 'landing-page-content.md']
+const markdownFiles = ['Ardarys-description.md', 'landing-page-content.md']
 const assetFiles = ['pitch_deck/Ardarys - Pitch Deck.pdf']
 
 await mkdir(publicDir, { recursive: true })

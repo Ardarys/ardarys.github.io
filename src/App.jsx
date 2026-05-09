@@ -6,7 +6,7 @@ import { loadMarkdown } from './utils/loadMarkdown'
 const baseUrl = import.meta.env.BASE_URL
 
 const markdownFiles = {
-  description: `${baseUrl}adl-ara-description.md`,
+  description: `${baseUrl}Ardarys-description.md`,
   content: `${baseUrl}landing-page-content.md`,
 }
 
@@ -23,7 +23,7 @@ const sections = [
   {
     key: 'description',
     fallback:
-      'No description content is available yet. Add copy to adl-ara-description.md to populate this section automatically.',
+      'No description content is available yet. Add copy to Ardarys-description.md to populate this section automatically.',
   },
   {
     key: 'content',
@@ -213,7 +213,7 @@ export default function App() {
         >
           <div className="hero-copy">
             <p className="eyebrow">AI-Powered Legal Decision Intelligence</p>
-            <h1>AdlAra</h1>
+            <h1>Ardarys</h1>
             <p className="hero-text">
               Better legal decisions, with AI support and real expert input.
             </p>
@@ -307,7 +307,7 @@ export default function App() {
 
       <footer className="site-footer">
         <div className="container footer-inner">
-          <p>AdlAra brings decision intelligence to modern legal services.</p>
+          <p>Ardarys brings decision intelligence to modern legal services.</p>
           <a href="#root">Back to top</a>
         </div>
       </footer>
